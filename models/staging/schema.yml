@@ -1,0 +1,19 @@
+
+version: 2
+
+models:
+  - name: stg_device
+    description: "Device types in stores"
+    columns:
+      - name: id
+        description: "Primary key"
+  - name: stg_store
+    description: "Stores information"
+    columns:
+      - name: id
+        description: "Primary key"
+  - name: stg_transactions
+    description: "Transactions information"
+    columns:
+      - name: id
+        description: "Primary key"
