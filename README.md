@@ -11,7 +11,6 @@ The primary objectives of this project are to:
   - Top 10 products sold.
   - Average transacted amount per store typology and country.
   - Percentage of transactions per device type.
-  - Average time for a store to perform its first five transactions.
   - Average time for a store to adopt devices based on its first five transactions.
 
 ### Assumptions
