@@ -1,6 +1,6 @@
 WITH raw_device AS (
     SELECT *
-    FROM staging_device
+    FROM sumup.staging_device
 )
 SELECT
     id AS device_id,

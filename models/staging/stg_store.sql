@@ -1,6 +1,6 @@
 WITH raw_store AS (
     SELECT *
-    FROM staging_store
+    FROM sumup.staging_store
 )
 SELECT
     id AS store_id,

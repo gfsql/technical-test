@@ -3,8 +3,6 @@ WITH device_transactions AS (
         device_type,
         COUNT(transaction_id) AS total_transactions
     FROM {{ ref('fct_transactions') }} t
-    JOIN {{ ref('stg_device') }} d
-      ON t.device_id = d.device_id
     GROUP BY device_type
 ),
 total AS (

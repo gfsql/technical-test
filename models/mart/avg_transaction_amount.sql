@@ -4,6 +4,7 @@ WITH avg_amounts AS (
         country,
         AVG(amount) AS avg_amount
     FROM {{ ref('fct_transactions') }}
+    WHERE status LIKE 'accepted'
     GROUP BY typology, country
 )
 SELECT typology, country, avg_amount

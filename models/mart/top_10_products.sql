@@ -3,6 +3,7 @@ WITH product_sales AS (
         product_name,
         COUNT(transaction_id) AS total_sold
     FROM {{ ref('fct_transactions') }}
+    WHERE status LIKE 'accepted'
     GROUP BY product_name
 )
 SELECT product_name, total_sold

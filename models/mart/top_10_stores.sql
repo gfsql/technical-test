@@ -3,6 +3,7 @@ WITH store_totals AS (
         store_id,
         SUM(amount) AS total_amount
     FROM {{ ref('fct_transactions') }}
+    WHERE status LIKE 'accepted'
     GROUP BY store_id
 )
 SELECT store_id, total_amount
