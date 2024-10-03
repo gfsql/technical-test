@@ -6,7 +6,7 @@ WITH ranked_transactions AS (
     FROM {{ ref('fct_transactions') }}
 ),
 
-fiveth_transaction AS (
+fifth_transaction AS (
     SELECT
         store_id,
         happened_at AS transaction_date
@@ -21,7 +21,7 @@ store_adoption AS (
         fdt.transaction_date,
         fdt.transaction_date - s.created_at AS adoption_time_days
     FROM {{ ref('stg_store') }} s
-    JOIN fiveth_transaction fdt ON s.store_id = fdt.store_id
+    JOIN fifth_transaction fdt ON s.store_id = fdt.store_id
 )
 
 SELECT
