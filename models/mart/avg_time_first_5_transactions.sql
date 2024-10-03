@@ -2,16 +2,16 @@ WITH ranked_transactions AS (
     SELECT
         store_id,
         happened_at,
-        ROW_NUMBER() OVER (PARTITION BY store_id ORDER BY happened_at) AS transaction_rank  -- Rank transactions per store
+        ROW_NUMBER() OVER (PARTITION BY store_id ORDER BY happened_at) AS transaction_rank
     FROM {{ ref('fct_transactions') }}
 ),
 
 fiveth_transaction AS (
     SELECT
         store_id,
-        happened_at AS transaction_date  -- Get the date of the first transaction among the first five
+        happened_at AS transaction_date
     FROM ranked_transactions
-    WHERE transaction_rank = 5  -- Only include the first five transactions
+    WHERE transaction_rank = 5
 ),
 
 store_adoption AS (
