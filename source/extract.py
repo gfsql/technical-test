@@ -13,14 +13,14 @@ metadata = MetaData(schema='sumup')
 
 device_table = Table(
     'staging_device', metadata,
-    Column('id', BigInteger),
+    Column('id', BigInteger, primary_key=True),
     Column('type', Integer),
     Column('store_id', Integer)
 )
 
 store_table = Table(
     'staging_store', metadata,
-    Column('id', Integer),
+    Column('id', Integer, primary_key=True),
     Column('name', VARCHAR(255)),
     Column('address', VARCHAR(255)),
     Column('city', VARCHAR(100)),
@@ -32,7 +32,7 @@ store_table = Table(
 
 transactions_table = Table(
     'staging_transactions', metadata,
-    Column('id', BigInteger),
+    Column('id', BigInteger, primary_key=True),
     Column('device_id', BigInteger),
     Column('product_name', VARCHAR(255)),
     Column('product_sku', VARCHAR(100)),
