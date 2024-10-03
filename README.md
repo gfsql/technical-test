@@ -18,6 +18,7 @@ The primary objectives of this project are to:
 
  - We will be using a data warehouse from supported SQLAlchemy dialects or any maintained external dialects.
  - We will be using a data warehouse which supports an OVER clause
+ - store.xlsx created_at provides the date any device is installed in this store
 
 ### Design Considerations
 
